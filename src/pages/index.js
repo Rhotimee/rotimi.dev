@@ -1,9 +1,11 @@
 import React from 'react'
-import Maintainance from '../components/maintainance'
+import Front from '../components/index'
 
- const Index= ()  => {
+
+
+ const Index = ()  => {
   return (
-    <Maintainance />
+    <Front />
   )
 }
 

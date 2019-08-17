@@ -74,5 +74,13 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /assets/ // See below to configure properly
+        }
+      }
+    }
   ],
 }
