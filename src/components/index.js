@@ -3,7 +3,7 @@ import styled from "@emotion/styled"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 
-import Layout from "./Layout"
+import Layout from "./layout"
 
 const IndexStyles = styled.div`
   max-width: 50rem;
