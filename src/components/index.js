@@ -11,25 +11,29 @@ const IndexStyles = styled.div`
   display: flex;
   align-items: center;
 
+  h2 {
+    margin-top: 1.5rem;
+  }
+
   p {
-    margin: 2rem 0;
+    margin-top: 1.75rem 0;
   }
 
   .image-container {
-    width: 25rem;
+    width: 20rem;
     height: 100%;
     flex: 0 0 auto;
     margin-right: 2rem;
   }
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 768px) {
     flex-direction: column;
 
     .image-container {
-      width: 15rem;
+      width: 100%;
       height: 100%;
       flex: 0 0 auto;
-      margin-right: 2rem;
+      margin-right: 0;
     }
   }
 `
@@ -67,15 +71,14 @@ const Index = () => {
         <div>
           <h2>Hi 👋🏽, I'm {author}.</h2>
           <p>
-            I'm a Fullstack engineer who is
-            passionate about building products and solving problems.
+            I'm a Fullstack engineer who is passionate about building products
+            and solving problems.
           </p>
           <p>
             Right now, he work's with Openinvest whose mission is to use
             technology to bring honesty and transparency to financial services.
           </p>
         </div>
-        <img src="../../content/assets/email.svg" alt="" />
       </IndexStyles>
     </Layout>
   )

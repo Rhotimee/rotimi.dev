@@ -7,6 +7,19 @@ import ContactIcon from "../../content/assets/email.svg"
 
 const SideNavStyles = styled.div`
   margin: auto 0 auto 2rem;
+  background: #121212;
+
+  @media screen and (max-width: 768px) {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
 `
 
 const Nav = styled.div`
@@ -15,6 +28,7 @@ const Nav = styled.div`
   align-items: center;
   color: #fff;
   margin: 1.5rem 0;
+  cursor: pointer;
 
   svg {
     fill: #fff;

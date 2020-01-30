@@ -10,9 +10,15 @@ const LayoutStyles = styled.div`
   position: relative;
   height: 100vh;
   width: 100%;
+  padding: 2rem;
+  position: relative;
 
   main {
     margin: auto;
+  }
+
+  @media screen and (max-width: 768px) {
+    height: 100%;
   }
 `
 
@@ -22,6 +28,14 @@ const SideChild = styled.div`
   display: flex;
   flex-direction: row;
   flex-grow: 1;
+  overflow: scroll;
+  position: relative;
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 3rem;
+  }
 `
 class Layout extends React.Component {
   render() {
