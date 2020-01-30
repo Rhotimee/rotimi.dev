@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `Rotimi's Portfolio`,
-    author: `Yemitan Isaiah Olurotimi`,
-    description: `Welcome to rotimi's portfolio`,
+    author: `Rotimi Yemitan`,
+    description: `Welcome to Rotimi's portfolio`,
     siteUrl: `https://rotimi.dev/`,
     social: {
       twitter: `rhotimee`,
@@ -78,9 +78,9 @@ module.exports = {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
-          include: /assets/ // See below to configure properly
-        }
-      }
-    }
+          include: /assets/, // See below to configure properly
+        },
+      },
+    },
   ],
 }

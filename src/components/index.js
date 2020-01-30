@@ -1,108 +1,84 @@
-import React from 'react'
-import styled from '@emotion/styled'
+import React from "react"
+import styled from "@emotion/styled"
 import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
-import Github from '../../content/assets/github.svg'
-import LinkedIn from '../../content/assets/linkedin.svg'
-import Nigeria from '../../content/assets/nigeria.svg'
-import Twitter from '../../content/assets/twitter.svg'
+import Img from "gatsby-image"
 
+import Layout from "./Layout"
 
 const IndexStyles = styled.div`
-  .header {
-    min-height: 45vh;
-    background: lightblue;
+  max-width: 50rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
 
-    .nav {
-      display: flex;
-      justify-content: flex-end;
-      padding: 1rem;
+  p {
+    margin: 2rem 0;
+  }
 
-      .top-icons {
-        display: flex;
-        justify-content: flex-end;
-        svg {
-          margin: 0 .8rem;
-          height: 25px;
-          width: 25px;
-        }
-      }
-    }
+  .image-container {
+    width: 25rem;
+    height: 100%;
+    flex: 0 0 auto;
+    margin-right: 2rem;
+  }
 
-    .info {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 5rem;
+  @media screen and (max-width: 480px) {
+    flex-direction: column;
 
-      .bio {
-        border-radius: 50%;
-        height: 3rem;
-        width: 3rem;
-      }
-    }
-    .sec-nav {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
+    .image-container {
+      width: 15rem;
+      height: 100%;
+      flex: 0 0 auto;
+      margin-right: 2rem;
     }
   }
-`;
- 
+`
+
 const Index = () => {
-  const data = useStaticQuery(graphql`
-    query IndexQuery {
-      avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
-        childImageSharp {
-          fixed(width: 50, height: 50) {
-            ...GatsbyImageSharpFixed
+  const { site, file } = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            author
+          }
+        }
+
+        file(relativePath: { eq: "rotimi.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 400) {
+              ...GatsbyImageSharpFluid
+            }
           }
         }
       }
-      site {
-        siteMetadata {
-          author
-          social {
-            twitter
-          }
-        }
-      }
-    }
-  `)
+    `
+  )
 
-  const { author, social } = data.site.siteMetadata
+  const { author } = site.siteMetadata
+  const { fluid } = file.childImageSharp
 
-   return (
-     <IndexStyles>
-       <div className="header">
-          <div className="nav">
-            <div className="top-icons">
-              <Github />
-              <LinkedIn />
-              <Twitter />
-              <Nigeria />
-            </div>
-          </div>
-          <div className="info">
-            <Image
-              fixed={data.avatar.childImageSharp.fixed}
-              alt={author}
-              className="bio"
-            />
-            <h2>{author}</h2>
-            <div>Software and Machine Learning Engineer</div>
-          </div>
-          <div className="sec-nav">
-            <span>about me</span>
-            <span>portfolio</span>
-            <span>resume</span>
-            <span>contact</span>
-            <span>blog</span>
-          </div>
-       </div>
-     </IndexStyles>
-   )
- }
- 
+  return (
+    <Layout>
+      <IndexStyles>
+        <div className="image-container">
+          <Img fluid={fluid} />
+        </div>
+        <div>
+          <h2>Hi 👋🏽, I'm {author}.</h2>
+          <p>
+            I'm a Fullstack engineer who is
+            passionate about building products and solving problems.
+          </p>
+          <p>
+            Right now, he work's with Openinvest whose mission is to use
+            technology to bring honesty and transparency to financial services.
+          </p>
+        </div>
+        <img src="../../content/assets/email.svg" alt="" />
+      </IndexStyles>
+    </Layout>
+  )
+}
 
- export default Index
+export default Index

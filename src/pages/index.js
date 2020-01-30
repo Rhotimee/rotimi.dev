@@ -1,12 +1,6 @@
-import React from 'react'
-import Front from '../components/index'
+import React from "react"
+import Front from "../components/index"
 
-
-
- const Index = ()  => {
-  return (
-    <Front />
-  )
-}
+const Index = () => <Front />
 
 export default Index
