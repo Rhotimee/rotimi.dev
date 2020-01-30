@@ -1,10 +1,6 @@
-import React from 'react'
-import Maintainance from '../components/maintainance'
+import React from "react"
+import Front from "../components/index"
 
- const Index= ()  => {
-  return (
-    <Maintainance />
-  )
-}
+const Index = () => <Front />
 
 export default Index
