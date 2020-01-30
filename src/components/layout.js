@@ -6,7 +6,7 @@ import SideNav from "./SideNav"
 
 const LayoutStyles = styled.div`
   background: #121212;
-  color: #bb86fc;
+  color: #b3b1b5;
   position: relative;
   height: 100vh;
   width: 100%;
@@ -34,7 +34,7 @@ const SideChild = styled.div`
   @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column-reverse;
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
   }
 `
 class Layout extends React.Component {

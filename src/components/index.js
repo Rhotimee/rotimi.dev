@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "@emotion/styled"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 
 import Layout from "./Layout"
@@ -13,10 +13,12 @@ const IndexStyles = styled.div`
 
   h2 {
     margin-top: 1.5rem;
+    color: #d8d8d9;
   }
 
   p {
     margin-top: 1.75rem 0;
+    color: #b3b1b5;
   }
 
   .image-container {
@@ -24,6 +26,12 @@ const IndexStyles = styled.div`
     height: 100%;
     flex: 0 0 auto;
     margin-right: 2rem;
+  }
+
+  .links {
+    * {
+      margin-right: 0.5rem;
+    }
   }
 
   @media screen and (max-width: 768px) {
@@ -78,6 +86,22 @@ const Index = () => {
             Right now, he work's with Openinvest whose mission is to use
             technology to bring honesty and transparency to financial services.
           </p>
+          <div className="links">
+            <a target="_blank" href="https://github.com/rhotimee">
+              github
+            </a>
+            <a target="_blank" href="https://twitter.com/rhotimee">
+              twitter
+            </a>
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/rotimi-yemitan/"
+            >
+              linkedin
+            </a>
+            <Link to="#">resume</Link>
+            <Link to="notes">blog</Link>
+          </div>
         </div>
       </IndexStyles>
     </Layout>
