@@ -1,10 +1,10 @@
 import React from "react"
 import styled from "@emotion/styled"
+import { Link } from "gatsby"
 import AboutIcon from "../../content/assets/user.svg"
 import ProjectsIcon from "../../content/assets/projects.svg"
 import NotesIcon from "../../content/assets/edit.svg"
 import ContactIcon from "../../content/assets/email.svg"
-import { Link } from "gatsby"
 
 const SideNavStyles = styled.div`
   margin: auto 0 auto 2rem;
@@ -44,7 +44,7 @@ const SideNavStyles = styled.div`
 
 const SideNav = () => (
   <SideNavStyles>
-    <Link to="about">
+    <Link to="/">
       <AboutIcon />
       <span>ABOUT</span>
     </Link>
