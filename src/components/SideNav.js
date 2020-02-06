@@ -4,6 +4,7 @@ import AboutIcon from "../../content/assets/user.svg"
 import ProjectsIcon from "../../content/assets/projects.svg"
 import NotesIcon from "../../content/assets/edit.svg"
 import ContactIcon from "../../content/assets/email.svg"
+import { Link } from "gatsby"
 
 const SideNavStyles = styled.div`
   margin: auto 0 auto 2rem;
@@ -20,46 +21,45 @@ const SideNavStyles = styled.div`
     bottom: 0;
     left: 0;
   }
-`
 
-const Nav = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #d8d8d9;
-  margin: 1.5rem 0;
-  cursor: pointer;
+  a {
+    box-shadow: none;
+    color: #d8d8d9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1.2rem 0;
+    svg {
+      fill: #fff;
+      height: 16px;
+      width: 16px;
+      margin-bottom: 0.5rem;
+    }
 
-  svg {
-    fill: #fff;
-    height: 16px;
-    width: 16px;
-    margin-bottom: 0.5rem;
-  }
-
-  span {
-    font-size: 0.7rem;
+    span {
+      font-size: 0.7rem;
+    }
   }
 `
 
 const SideNav = () => (
   <SideNavStyles>
-    <Nav>
+    <Link to="about">
       <AboutIcon />
       <span>ABOUT</span>
-    </Nav>
-    <Nav>
+    </Link>
+    <Link to="/">
       <NotesIcon />
       <span>NOTES</span>
-    </Nav>
-    <Nav>
+    </Link>
+    <Link to="/">
       <ProjectsIcon />
       <span>PROJECTS</span>
-    </Nav>
-    <Nav>
+    </Link>
+    <Link to="contact">
       <ContactIcon />
       <span>CONTACT</span>
-    </Nav>
+    </Link>
   </SideNavStyles>
 )
 
