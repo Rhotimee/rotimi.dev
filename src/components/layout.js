@@ -1,7 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
 import styled from "@emotion/styled"
-import Toggle from "./Toggle"
 import SideNav from "./SideNav"
 
 const LayoutStyles = styled.div`
@@ -12,31 +10,20 @@ const LayoutStyles = styled.div`
   width: 100%;
   padding: 2rem;
   position: relative;
-  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: scroll;
 
   main {
     margin: auto;
-    overflow: scroll;
-  }
-
-  @media screen and (max-width: 768px) {
-    height: 95vh;
-  }
-`
-
-const SideChild = styled.div`
-  width: 100%;
-  min-height: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-grow: 1;
-  overflow: scroll;
-  position: relative;
-
-  @media screen and (max-width: 768px) {
     display: flex;
-    flex-direction: column-reverse;
-    margin-bottom: 5rem;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 768px) {
+    height: calc(100vh - 5rem);
+    width: 100%;
   }
 `
 class Layout extends React.Component {
@@ -45,10 +32,8 @@ class Layout extends React.Component {
 
     return (
       <LayoutStyles>
-        <SideChild>
-          <SideNav />
-          <main>{children}</main>
-        </SideChild>
+        <SideNav />
+        <main>{children}</main>
       </LayoutStyles>
     )
   }

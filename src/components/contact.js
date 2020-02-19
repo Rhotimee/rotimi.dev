@@ -18,6 +18,10 @@ const ContactStyles = styled.div`
     }
   }
 
+  h2 {
+    margin-top: 0;
+  }
+
   .links {
     display: flex;
   }
