@@ -12,15 +12,20 @@ const LayoutStyles = styled.div`
   width: 100%;
   padding: 2rem;
   position: relative;
-  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: scroll;
 
   main {
     margin: auto;
-    overflow: scroll;
+    display: flex;
+    justify-content: center;
   }
 
   @media screen and (max-width: 768px) {
-    height: 95vh;
+    height: calc(100vh - 5rem);
+    width: 100%;
   }
 `
 
@@ -45,10 +50,8 @@ class Layout extends React.Component {
 
     return (
       <LayoutStyles>
-        <SideChild>
-          <SideNav />
-          <main>{children}</main>
-        </SideChild>
+        <SideNav />
+        <main>{children}</main>
       </LayoutStyles>
     )
   }

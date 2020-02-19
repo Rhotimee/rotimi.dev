@@ -7,19 +7,29 @@ import NotesIcon from "../../content/assets/edit.svg"
 import ContactIcon from "../../content/assets/email.svg"
 
 const SideNavStyles = styled.div`
-  margin: auto 0 auto 2rem;
+  height: 100%;
+  width: 10rem;
+  position: fixed;
+  margin: 0;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   @media screen and (max-width: 768px) {
     background: #222222;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
+    height: 5.1rem;
     width: 100%;
     justify-content: space-around;
 
     position: fixed;
     bottom: 0;
     left: 0;
+    top: unset;
   }
 
   a {
@@ -52,7 +62,7 @@ const SideNav = () => (
       <NotesIcon />
       <span>NOTES</span>
     </Link>
-    <Link to="/">
+    <Link to="/projects">
       <ProjectsIcon />
       <span>PROJECTS</span>
     </Link>
