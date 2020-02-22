@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Rotimi's Portfolio`,
-    author: `Rotimi Yemitan`,
+    title: `Isaiah's Portfolio`,
+    author: `Isaiah Yemitan`,
     description: `Welcome to Rotimi's portfolio`,
     siteUrl: `https://rotimi.dev/`,
     social: {
