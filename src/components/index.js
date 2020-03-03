@@ -2,6 +2,7 @@ import React from "react"
 import styled from "@emotion/styled"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Img from "gatsby-image"
+import YemitanResume from "../../content/assets/Yemitan-Resume.pdf"
 
 import Layout from "./layout"
 
@@ -83,8 +84,8 @@ const Index = () => {
             and solving problems.
           </p>
           <p>
-            Right now, he work's with Openinvest whose mission is to use
-            technology to bring honesty and transparency to financial services.
+            I am experienced in using Web technologies, Cloud and Machine
+            learning to build, scale and deploy solutions.
           </p>
           <div className="links">
             <a target="_blank" href="https://github.com/rhotimee">
@@ -99,8 +100,10 @@ const Index = () => {
             >
               linkedin
             </a>
-            <Link to="#">resume</Link>
-            <Link to="notes">blog</Link>
+            <a href={YemitanResume} download>
+              Resume
+            </a>
+            <Link to="#">blog</Link>
           </div>
         </div>
       </IndexStyles>
